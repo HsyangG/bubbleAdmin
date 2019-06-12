@@ -121,6 +121,38 @@ const router =  new Router({
             }
           ]
         },
+        // 商品类型
+        {
+          path: '/shop_type',
+          name: 'shop_type',
+          redirect: '/shop_type/inedx',
+          component: { render: h => h('router-view') },
+          meta: { title: '商品类型', keepAlive: true, icon: 'contacts' },
+          children: [
+            {
+              path: '/shop_type/index',
+              name: 'type_management',
+              component: () => import('@/views/shopType/index'),
+              meta: { title: '类型管理', keepAlive: false }
+            }
+          ]
+        },
+        // 商品详情
+        {
+          path: '/shop_info',
+          name: 'shop_info',
+          redirect: '/shop_info/index',
+          component: { render: h => h('router-view') },
+          meta: { title: '商品管理', icon: 'solution', keepAlive: true },
+          children: [
+            {
+              path: '/shop_info/index',
+              name: 'shop_info_list',
+              component: () => import('@/views/shops/list'),
+              meta: { title: '商品列表', keepAlive: false }
+            }
+          ]
+        },
       ]
     },
     {

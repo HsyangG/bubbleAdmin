@@ -17,7 +17,7 @@
         <SiderMenu :theme="navTheme"></SiderMenu>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
+        <a-layout-header style="background: #fff; padding: 0;margin-bottom: 20px;">
           <a-icon 
             class="trigger" 
             :type="collapsed ? 'menu-unfold' : 'menu-fold'" 
